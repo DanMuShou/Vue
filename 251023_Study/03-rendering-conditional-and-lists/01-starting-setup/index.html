@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Course Goals</h1>
+    </header>
+    <section id="user-goals">
+      <h2>My course goals</h2>
+      <input type="text" v-model="enteredGoalValue" />
+      <button @click="addGoal()">Add Goal</button>
+      <button @click="removeLastGoal()">Remove Last</button>
+      <!-- v-show不会移除元素, 而是隐藏起来 -->
+      <!-- v-if 会在DOM移除元素 -->
+      <p v-show="goals.length === 0">
+        No goals have been added yet - please start adding some!
+      </p>
+      <ul v-if="goals.length > 0">
+        <li
+          v-for="(goal, index) in goals"
+          :key="goal"
+          @click="removeGoal(index)"
+        >
+          <p>{{ goal }} - {{ index }}</p>
+          <!-- 移除的时候会Dom会复用原先的元素,导致input不会更新 -->
+          <input type="text" @click.stop />
+        </li>
+      </ul>
+
+      <!-- <ul>
+        <li v-for="num in 10">{{ num }}</li>
+      </ul> -->
+      <!-- <ul>
+        <li v-for="(value, key, index) in {name: 'a', age: 31}">
+          {{ key }} : {{ value }} - {{ index }}
+        </li>
+      </ul> -->
+    </section>
+  </body>
+</html>

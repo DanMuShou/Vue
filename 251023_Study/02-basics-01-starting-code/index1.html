@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+    <script src="app1.js" defer></script>
+  </head>
+
+  <body>
+    <section id="event">
+      <h2>目标</h2>
+      <button @click="add(10)">添加 10</button>
+      <button @click="subtract(5)">减少 5</button>
+      <p v-once>起始计数: {{ counter }}</p>
+      <p>实时计数: {{ counter }}</p>
+      <input type="text" v-model="name" />
+      <input type="text" v-model="lastName" />
+      <button v-on:click="resetInput()">重置名称</button>
+      <p>名字: {{ fullname }}</p>
+      <form v-on:submit.prevent="submitForm($event)">
+        <input type="text" />
+        <button>提交</button>
+      </form>
+    </section>
+  </body>
+</html>

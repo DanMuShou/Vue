@@ -1,0 +1,71 @@
+# 包含依赖项和构建脚本的 node_modules 文件夹
+node_modules/
+
+# 构建输出目录
+dist/
+
+# 日志文件
+*.log
+
+# 编辑器相关文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 环境变量文件（敏感信息）
+.env.local
+.env.*.local
+
+# Vue CLI 服务文件
+public/index.html  # 如果有自定义模板可以保留
+
+# 测试报告
+coverage/
+
+# 临时文件
+tmp/
+temp/
+
+# npm 调试日志
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# pnpm
+pnpm-debug.log*
+
+# 类型检查缓存 (TypeScript)
+*.tsbuildinfo
+
+# Vite 相关
+.vite/
+
+
+.DS_Store
+node_modules
+/dist
+
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
