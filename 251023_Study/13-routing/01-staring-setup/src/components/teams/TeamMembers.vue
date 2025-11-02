@@ -42,16 +42,23 @@ export default {
       }
     },
   },
-  created() {
-    this.loadTeamMembers(this.teamId);
+  // created() {
+  //   this.loadTeamMembers(this.teamId);
+  //   console.log(this.$route.query);
+  // },
+  beforeRouteUpdate(to, from, next) {
+    console.log("TeamMembers beforeRouteUpdate");
+    console.log(to, from);
+    this.loadTeamMembers(to.params.teamId);
+    next();
   },
 
-  watch: {
-    // route并不会销毁重建组件, 而是缓存, 当路由改变时, 并不会调用created方法
-    teamId(newId) {
-      this.loadTeamMembers(newId);
-    },
-  },
+  // watch: {
+  //   // route并不会销毁重建组件, 而是缓存, 当路由改变时, 并不会调用created方法
+  //   teamId(newId) {
+  //     this.loadTeamMembers(newId);
+  //   },
+  // },
 };
 </script>
 
